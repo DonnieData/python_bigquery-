@@ -2,7 +2,8 @@
 Using python with Google Cloud Big Query 
 
 
-1.ddl/ json for bq table 
-2. load job for data 
-3.python script to transform data
-google studio visualization 
+- ddl/ json for bq table 
+- load job for data 
+  - cloud storage -> BQ 
+- python script to transform data
+- google studio visualization 
