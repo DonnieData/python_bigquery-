@@ -1,0 +1,20 @@
+[
+  {
+    "name": "qtr",
+    "type": "STRING",
+    "mode": "REQUIRED"
+
+  },
+  {
+    "name": "rep",
+    "type": "STRING",
+    "mode": "NULLABLE"
+ 
+  },
+  {
+    "name": "sales",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+ 
+  }
+]
