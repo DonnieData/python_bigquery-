@@ -2,7 +2,12 @@
 Using python with Google Cloud Big Query 
 
 #Overview
-
+- create schemas
+ - create service account & credentials 
+ - update credentials and projectid for python
+ - logger
+ 
+ 
 # 
 
 create datasets in BQ using cloud shell
@@ -22,6 +27,11 @@ connecting python to Google BQ
 ![image](https://user-images.githubusercontent.com/55963911/228696280-0be8f371-25e8-405c-bf84-377196be0343.png)
 
 
+
+GCP Log explorer shows inserjob completed with no errors 
+- shows method:pandas nad how data is loaded
+![image](https://user-images.githubusercontent.com/55963911/229265673-bab51d35-a30d-46af-bb45-b083cb6d82be.png)
+
 python data 
 - retreival 
 - main table, downstream tables.metrics 
@@ -38,4 +48,8 @@ load into BQ with python
 
 # Data 
 City of Dallas 311 Service Requests: https://www.dallasopendata.com/Services/311-Service-Requests-October-1-2020-to-Present/d7e7-envw
+
+
+#Dash
+https://lookerstudio.google.com/u/2/reporting/25820fbc-2b87-4bad-91bb-1b75f1d7404a/page/nXDGB
 
