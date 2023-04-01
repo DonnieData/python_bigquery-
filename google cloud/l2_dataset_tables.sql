@@ -11,3 +11,17 @@ create table `qwiklabs-gcp-03-78402af0367f.l2_datasets.service_by_status` as (
   group by status 
   order by service_count desc
 )
+
+
+--no timezone imforation provided so datetime used instead of timestamp to prevent from converting ot UTC
+with base_table as (
+select 
+* 
+,datetime(created_date) created_date_t
+,datetime(overall_service_request_due_date) overall_service_request_due_date_t
+,datetime(update_date) update_date_t
+,ifnull(datetime(closed_date),current_datetime()) closed_date_t
+from `donni12.l1_data.311_data`
+)
+
+select * from base_table
