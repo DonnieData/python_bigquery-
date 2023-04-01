@@ -2,7 +2,11 @@
 Using python with Google Cloud Big Query 
 
 #Overview
-
+- create schemas
+ - create service account & credentials 
+ - update credentials and projectid for python
+ 
+ 
 # 
 
 create datasets in BQ using cloud shell
