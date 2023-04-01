@@ -29,6 +29,7 @@ connecting python to Google BQ
 
 
 GCP Log explorer shows inserjob completed with no errors 
+- shows method:pandas nad how data is loaded
 ![image](https://user-images.githubusercontent.com/55963911/229265673-bab51d35-a30d-46af-bb45-b083cb6d82be.png)
 
 python data 
