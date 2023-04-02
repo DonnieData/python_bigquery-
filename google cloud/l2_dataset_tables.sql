@@ -38,12 +38,12 @@ create table `[project_id].l3_tables.service_by_status` as (
 )
 
 -- service_requests count by zipcode 
-select zipcode, count(service_request_number)
+select zipcode, count(service_request_number) service_request_count
 from `[project_id].l2_tables.311_transformed`
 group by zipcode 
 
 --service requests by type 
-select service_request_type, count(service_request_number)
+select service_request_type, count(service_request_number) service_request_count
 from `[project_id].l2_tables.311_transformed`
 group by service_request_type 
 
