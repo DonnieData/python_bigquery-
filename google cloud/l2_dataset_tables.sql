@@ -14,7 +14,7 @@ from `[project_id].l1_tables.311_data`
 
 --L3
 -- table for service_requests by department
-create table `[project_id].l3_datasets.service_type_dept` as (
+create table `[project_id].l3_datasets.service_request_by_dept` as (
   select department, count(service_request_number) service_count from `[project_id].l2_tables.311_transformed`
   group by department 
   order by service_count desc
@@ -29,8 +29,22 @@ create table `[project_id].l3_tables.service_by_status` as (
 
 -- service_requests count by zipcode 
 select zipcode, count(service_request_number)
-from `donni12.l1_data.base_table`
+from `[project_id].l2_tables.311_transformed`
 group by zipcode 
+
+--service requests by type 
+select service_request_type, count(service_request_number)
+from `[project_id].l2_tables.311_transformed`
+group by service_request_type 
+
+-- day of week and hour for service request creation 
+create table `[project_id].l3_tables.service_creation_date_metrics` ()
+select 
+created_date_t
+,format_date('%a',created_date_t) created_weekday
+,extract(hour from created_date_t) created_hour
+from `[project_id].l2_tables.311_transformed`
+)
 
 
 
