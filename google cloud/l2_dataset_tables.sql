@@ -61,6 +61,7 @@ group by zipcode
 select service_request_type, count(service_request_number) service_request_count
 from `[project_id].l2_tables.311_transformed`
 group by service_request_type 
+order by service_request_count desc 
 
 -- day of week and hour for service request creation 
 create table `[project_id].l3_tables.service_creation_date_metrics` (
