@@ -1,5 +1,6 @@
 Anaylsis Questions: 
 - What type of service requests longest and shortest to complete on average? 
+   - do request by age bucket and status 
 - waht is the breakdown of service request types? 
 - what is the spread of service requests age by day? 
 - what zipcode receives the most requests? 
