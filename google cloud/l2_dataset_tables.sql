@@ -19,8 +19,23 @@ when status = 'New (Duplicate)' then 'Open'
 when status = 'On Hold' then 'Open'
 when status = 'On Hold (Duplicate)' then 'Open'
 end status_second
-from `[project_id].l1_tables.311_data`
-)
+from donni12.l1_data.311_data ),
+
+table2 as (select 
+*
+,date_diff(closed_date_t,created_date_t, day) created_closed 
+,date_diff(update_date_t,created_date_t, day) created_updated
+,date_diff(overall_service_request_due_date_t,created_date_t, day) created_due_date
+from table1) 
+
+
+select 
+*
+, round(created_closed/10)*10  created_closed_bucket
+,round(created_updated/10)*10  created_updated_bucket
+,round(created_due_date/10)*10  created_due_bucket
+ from table2
+ ) 
 
 --L3
 -- table for service_requests by department
