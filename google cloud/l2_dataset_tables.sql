@@ -38,14 +38,15 @@ from `[project_id].l2_tables.311_transformed`
 group by service_request_type 
 
 -- day of week and hour for service request creation 
-create table `[project_id].l3_tables.service_creation_date_metrics` ()
+create table `[project_id].l3_tables.service_creation_date_metrics` (
 select 
 created_date_t
 ,format_date('%a',created_date_t) created_weekday
 ,extract(hour from created_date_t) created_hour
+ ,format_date('%b', created_date_t) created_month
 from `[project_id].l2_tables.311_transformed`
 )
 
-
+--
 
 
