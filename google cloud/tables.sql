@@ -74,5 +74,27 @@ from `[project_id].l2_tables.311_transformed`
 )
 
 --
+-- topline metrics 
+with total_records as ( 
+  select count(service_request_number) count from `donni12.l2_data.311_data_transformed`
+)
+
+
+select 
+  (select count from total_records)service_request_count
+  ,(select max(created_due_date) from donni12.l2_data.311_data_transformed) max_created_due_date
+  ,(select min(created_due_date) from donni12.l2_data.311_data_transformed) min_created_due_date
+  ,(select round(avg(created_due_date)) from donni12.l2_data.311_data_transformed) avg_created_due_date
+  ,(select min(created_closed) from donni12.l2_data.311_data_transformed) min_created_closed
+  ,(select max(created_closed) from donni12.l2_data.311_data_transformed) max_created_closed
+  ,(select round(count(service_request_number)/12) from donni12.l2_data.311_data_transformed) avg_request_per_month
+
+
+  
+
+
+
+
+
 
 
