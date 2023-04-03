@@ -19,7 +19,7 @@ when status = 'New (Duplicate)' then 'Open'
 when status = 'On Hold' then 'Open'
 when status = 'On Hold (Duplicate)' then 'Open'
 end status_second
-from donni12.l1_data.311_data ),
+from `[project_id].l1_tables.311_data` ),
 
 table2 as (select 
 *
