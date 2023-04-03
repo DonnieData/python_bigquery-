@@ -82,14 +82,14 @@ with total_records as (
 
 select 
   (select count from total_records)service_request_count
-  ,(select max(created_due_date) from donni12.l2_data.311_data_transformed) max_created_due_date
-  ,(select min(created_due_date) from donni12.l2_data.311_data_transformed) min_created_due_date
-  ,(select round(avg(created_updated)) from donni12.l2_data.311_data_transformed) avg_created_update
-  ,(select min(created_closed) from donni12.l2_data.311_data_transformed) min_created_closed
-  ,(select max(created_closed) from donni12.l2_data.311_data_transformed) max_created_closed
-  ,(select round(count(service_request_number)/12) from donni12.l2_data.311_data_transformed) avg_request_per_month
+  ,(select max(created_due_date) from `[project_id].l2_tables.311_transformed`) max_created_due_date
+  ,(select min(created_due_date) from `[project_id].l2_tables.311_transformed`) min_created_due_date
+  ,(select round(avg(created_updated)) from `[project_id].l2_tables.311_transformed`) avg_created_update
+  ,(select min(created_closed) from `[project_id].l2_tables.311_transformed`) min_created_closed
+  ,(select max(created_closed) from `[project_id].l2_tables.311_transformed`) max_created_closed
+  ,(select round(count(service_request_number)/12) from `[project_id].l2_tables.311_transformed`) avg_request_per_month
 
-  ,(select round(avg(created_due_date)) from donni12.l2_data.311_data_transformed) avg_created_due_date
+  ,(select round(avg(created_due_date)) from `[project_id].l2_tables.311_transformed`) avg_created_due_date
 
 
 
