@@ -73,7 +73,7 @@ created_date_t
 from `[project_id].l2_tables.311_transformed`
 )
 
---
+
 -- topline metrics 
 with total_records as ( 
   select count(service_request_number) count from `donni12.l2_data.311_data_transformed`
@@ -92,8 +92,10 @@ select
   ,(select round(avg(created_due_date)) from `[project_id].l2_tables.311_transformed`) avg_created_due_date
 
 
-
-
+-- service requests by outcome
+select outcome, count(service_request_number) service_count from `[project_id].l2_tables.311_transformed`
+group by outcome 
+order by service_count desc 
 
 
 
