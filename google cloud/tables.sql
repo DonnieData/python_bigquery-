@@ -79,7 +79,7 @@ from `[project_id].l2_tables.311_transformed`
 -- topline metrics 
 create table `[project_id].l3_tables.service_metrics` as (
 with total_records as ( 
-  select count(service_request_number) count from `[project_id].l2_data.311_data_transformed`
+  select count(service_request_number) count from `[project_id].l2_tables.311_data_transformed`
 )
 
 select 
