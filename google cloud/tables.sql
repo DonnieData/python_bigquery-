@@ -68,11 +68,12 @@ order by service_request_count desc );
 -- day of week and hour for service request creation 
 create table `[project_id].l3_tables.service_creation_date_metrics` as (
 select 
-created_date_t
+format_date('%b', created_date_t) created_month
 ,format_date('%a',created_date_t) created_weekday
 ,extract(hour from created_date_t) created_hour
- ,format_date('%b', created_date_t) created_month
+ ,count(service_request_number) request_count
 from `[project_id].l2_tables.311_transformed`
+ group by created_month, created_weekday, created_hour
 );
 
 
