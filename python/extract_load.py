@@ -19,8 +19,8 @@ def main(project_id, endpoint):
     
     l1_df = pd.DataFrame(data.json())
     print(len(l1_df))
-    
-    l1_df.to_gbq(f'{project_id}.l1_datasets.311_data', if_exists='replace')
+
+    l1_df.to_gbq(f'{project_id}.l1_tables.311_data', if_exists='replace')
     
     
 if __name__ == "__main__":
